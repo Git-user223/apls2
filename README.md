@@ -43,6 +43,7 @@ python -m pip install --only-binary=:all: \
   "rtree>=1.0" \
   "geopandas>=0.13"
 python -m pip install -e . --no-deps
+python -m pip install -e .
 ```
 
 If wheel-only install is unavailable on your platform, use `conda`/`mamba` for the geospatial stack, then run:
