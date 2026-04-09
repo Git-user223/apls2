@@ -16,18 +16,13 @@ It keeps the core APLS metric behavior while updating the implementation and dep
 - Python packaging with `pyproject.toml`
 - Updated dependency stack (NetworkX 3.x, pandas 2.x, Shapely 2.x, rasterio, pyproj)
 - Legacy API compatibility fixes across graph parsing, scoring, and utility layers
-- Test suite updates and validation for modern environments
+- Modern runtime compatibility across current Python environments
 
 ## Installation
 
-```bash
-pip install -e .
-```
-
-From the `apls2` directory:
+From this repository root:
 
 ```bash
-cd apls2
 pip install -e .
 ```
 
@@ -55,21 +50,18 @@ apls2 --help
 
 ## Running Tests
 
-From the workspace root:
+If you add tests to this repository, run:
 
 ```bash
-python -m pytest apls_tests/ -v --tb=short
+python -m pytest -v --tb=short
 ```
 
 ## Repository Layout
 
 - `apls2/apls2/` - package source code
 - `apls2/apls2/data/` - bundled sample data and sample outputs
-- `apls_tests/` - full test suite
-- `apls_notes/` - modernization notes, specification, and status docs
 
 ## Attribution
 
 - Original APLS project: https://github.com/CosmiQ/apls
 - This repository is an AI-authored modernization intended to preserve behavior while improving maintainability and installability.
-
