@@ -26,6 +26,31 @@ From this repository root:
 pip install -e .
 ```
 
+## Geospatial Install Notes
+
+On some systems, `pip` may try to build `rasterio`/`pyproj` from source and fail due to older system GDAL/PROJ libraries.
+
+If that happens, use a wheel-first install flow:
+
+```bash
+python3.11 -m venv .venv
+source .venv/bin/activate
+python -m pip install -U pip setuptools wheel
+python -m pip install --only-binary=:all: \
+  "rasterio>=1.3,<1.5" \
+  "pyproj>=3.4,<3.8" \
+  "shapely>=2.0" \
+  "rtree>=1.0" \
+  "geopandas>=0.13"
+python -m pip install -e . --no-deps
+```
+
+If wheel-only install is unavailable on your platform, use `conda`/`mamba` for the geospatial stack, then run:
+
+```bash
+pip install -e . --no-deps
+```
+
 ## Quick Start
 
 Run the CLI on bundled sample pickle data:
